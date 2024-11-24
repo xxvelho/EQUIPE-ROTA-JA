@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório - Combustível</title>
+    <link rel="stylesheet" href="/css/indicadores.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório: Combustível</h1>
+        <div id="relatorio-dados"></div>
+    </div>
+    <!-- Barra inferior -->
+    <div class="bottom-bar">
+        <a href="../main.html" class="bar-button">
+            <span class="icon">🎤</span>
+            <span class="text">Rota Já</span>
+        </a>
+        <a href="html/mapa.html" class="bar-button">
+            <span class="icon">🗺️</span>
+            <span class="text">Rota</span>
+        </a>
+        <a href="html/relatorio.html" class="bar-button">
+            <span class="icon">📊</span>
+            <span class="text">Relatórios</span>
+        </a>
+    </div>
+    <script>
+        async function fetchData() {
+            const apiUrl = "http://127.0.0.1:5000/relatorio/gasolina";
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                console.log(data);
+                document.getElementById("relatorio-dados").innerHTML = `
+                    <p>Dados coletados sobre combustível:</p>
+                    <ul>
+                        <li>Porcentagem: ${data.data.porcentagem}</li>
+                        <li>Capacidade total: ${data.data.litros}</li>
+                        <li>Total gasto: ${data.data.total_gasto}</li>
+                        <li>Última reposição: ${data.data.ultima_reposicao}</li>
+                        <li>Eficiência média: ${data.data.eficiencia_media} km/l</li>
+                    </ul>`;
+            } catch (error) {
+                console.log(error);
+                document.getElementById("relatorio-dados").textContent = "Erro ao carregar os dados.";
+            }
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>

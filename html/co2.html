@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório - CO2</title>
+    <link rel="stylesheet" href="/css/indicadores.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório: CO2</h1>
+        <p>Carregando dados...</p>
+        <div id="relatorio-dados"></div>
+    </div>
+    <script>
+        async function fetchData() {
+            const apiUrl = "https://sua-api-aqui.com/endpoint-co2"; // Substitua pela URL da API
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                document.getElementById("relatorio-dados").innerHTML = `
+                    <p>Dados coletados sobre emissões de CO2:</p>
+                    <ul>
+                        <li>Total emitido: ${data.total_emitido} kg</li>
+                        <li>Média por viagem: ${data.media_por_viagem} kg</li>
+                        <li>Última atualização: ${data.ultima_atualizacao}</li>
+                    </ul>`;
+            } catch (error) {
+                document.getElementById("relatorio-dados").textContent = "Erro ao carregar os dados.";
+            }
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    margin-bottom: 70px; /* Espaço para a barra inferior */
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.microphone-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    background: #007BFF;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.microphone-container.active {
+    transform: scale(1.2);
+    background: #28a745;
+    box-shadow: 0 4px 20px rgba(40, 167, 69, 0.7);
+}
+
+.microphone-container img {
+    width: 60px;
+    height: 60px;
+}
+
+#status {
+    font-size: 18px;
+    color: #444;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Barra inferior */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Usa a cor herdada do elemento pai */
+    font-family: 'Arial', sans-serif; /* Define a fonte para os links */
+    display: inline-block; /* Permite usar margem e padding */
+}
+
+.bar-button {
+    padding: 0 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.bar-button:hover {
+    color: #0056b3;
+}
+
+.bar-button .icon {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 5px;
+}

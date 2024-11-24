@@ -1,0 +1,124 @@
+/* styles.css */
+
+/* Estilo Geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    display: flex; /* Define o layout como Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da janela */
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Usa a cor herdada do elemento pai */
+    font-family: 'Arial', sans-serif; /* Define a fonte para os links */
+    display: inline-block; /* Permite usar margem e padding */
+}
+
+.container {
+    max-width: 800px;
+    width: 100%; /* Garante que o container seja responsivo */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Header */
+.header {
+    background: #005f73;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Grid de Ícones */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.icon-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icon-item:hover {
+    transform: scale(1.1);
+}
+
+.icon-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+.icon-item span {
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Detalhes */
+.details {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.details h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #005f73;
+}
+
+/* Barra Inferior */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.bar-button {
+    padding: 0 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.bar-button:hover {
+    color: #002f40;
+}
+
+.bar-button .icon {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.comando {
+    text-align: center;
+}
+h2 {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
